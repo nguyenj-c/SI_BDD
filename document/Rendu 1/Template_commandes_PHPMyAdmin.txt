@@ -1,0 +1,45 @@
+CREATE TABLE horse_sim.club_hippique ( ID_gerant INT(2) NOT NULL AUTO_INCREMENT , ID_unique INT(2) NOT NULL , 
+							capacite INT(2) NOT NULL , ID_infra INT(2) NOT NULL , ID_concours INT(2) NOT NULL , 
+							PRIMARY KEY (ID_gerant, ID_unique)) ENGINE = InnoDB;
+
+CREATE TABLE horse_sim.concours ( ID_concours INT(2) NOT NULL AUTO_INCREMENT , ID_unique INT(2) NOT NULL , ID_Item INT(2) NOT NULL , ID_infra INT(2) NOT NULL ,
+							date_deb TIMESTAMP NOT NULL , date_fin TIMESTAMP NOT NULL
+							PRIMARY KEY (ID_concours, ID_unique)) ENGINE = InnoDB;
+
+CREATE TABLE horse_sim.centre_equestre ( ID_unique INT(2) NOT NULL AUTO_INCREMENT , ID_Item INT(2) NOT NULL , ID_infra INT(2) NOT NULL ,
+							date_deb TIMESTAMP NOT NULL , date_fin TIMESTAMP NOT NULL
+							PRIMARY KEY (ID_gerant)) ENGINE = InnoDB;
+
+
+
+
+
+
+
+CREATE TABLE horse_sim.Tache_auto ( ID_auto INT(2) NOT NULL AUTO_INCREMENT , ID_unique INT(2) NOT NULL , 
+							action VARCHAR(30) NOT NULL , frequence VARCHAR(10) NOT NULL , 
+							PRIMARY KEY (ID_auto, ID_unique)) ENGINE = InnoDB;
+
+CREATE TABLE horse_sim.Journal ( ID_journal INT(2) NOT NULL AUTO_INCREMENT , ID_joueur INT(2) NOT NULL , ID_article INT(2) NOT NULL , 
+							date TIMESTAMP NOT NULL , agenda VARCHAR(45) NOT NULL , top_events VARCHAR(45) NOT NULL , 
+							PRIMARY KEY (ID_journal)) ENGINE = InnoDB;
+
+CREATE TABLE horse_sim.Article ( ID_article INT(2) NOT NULL AUTO_INCREMENT , 
+							title VARCHAR(20) NOT NULL , text VARCHAR(45) NOT NULL , image VARCHAR(30) NOT NULL , category VARCHAR(10) NOT NULL , 
+							PRIMARY KEY (ID_article)) ENGINE = InnoDB;
+
+CREATE TABLE horse_sim.Item ( ID INT(2) NOT NULL AUTO_INCREMENT , ID_niveau INT(2) NOT NULL , ID_famille INT(2) NOT NULL ,
+							type VARCHAR(20) NOT NULL , description VARCHAR(45) NOT NULL , prix INT(3) NOT NULL ,
+							PRIMARY KEY (ID)) ENGINE = InnoDB;
+
+CREATE TABLE horse_sim.Famille_Item ( ID INT(2) NOT NULL AUTO_INCREMENT , 
+							nom VARCHAR(20) NOT NULL , 
+							PRIMARY KEY (ID)) ENGINE = InnoDB;
+
+CREATE TABLE horse_sim.Niveau ( ID INT(2) NOT NULL AUTO_INCREMENT , 
+							rarete VARCHAR(10) NOT NULL ,  
+							PRIMARY KEY (ID)) ENGINE = InnoDB;
+
+CREATE TABLE horse_sim.Magasin ( ID INT(2) NOT NULL AUTO_INCREMENT , ID_centre_equestre INT(2) NOT NULL , ID_club_hippique INT(2) NOT NULL , ID_infra INT(2) NOT NULL , ID_item INT(2) NOT NULL ,
+							nom VARCHAR(20) NOT NULL ,
+							PRIMARY KEY (ID)) ENGINE = InnoDB;

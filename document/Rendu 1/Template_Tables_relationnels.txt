@@ -1,0 +1,32 @@
+Club_hippiques( ID_unique,ID_gerant, #ID_infra, #ID_concours, capacite )
+
+Concours( ID_unique, ID_concours, #ID_Item, #ID_infra , date_deb, date_fin )
+
+Centre_equestre ( ID_unique, ID_equestre, #ID_gerant, #ID_infra_club, #ID_taches_auto, capacite )
+
+Infrastructure ( ID_unique, ID_infra, #ID_accomodation_capacity, #ID_items, type, niveau, description, infrastructure_family, prix, ressource_consumption )
+
+Joueur_compte ( ID_joueur_compte, #ID_player, #ID_centre_equestre, #ID_chevaux, #ID_club_hippique, #ID_items, #ID_tache, money, IP_address, date_Inscription, last_connexion )
+
+Joueur ( ID_joueur, nom, prenom ,email, mdp, sexe, birthDate, phone, address, picture_account, description, website )
+
+Chevaux ( ID_cheval, #ID_etat, name, race, description )
+
+Banque( ID_unique, ID_banque, #ID_joueur, montant, last_connexion )
+
+HistoriqueBanquaire( ID_unique, ID_historiqueBanquaire, #ID_banque, #ID_joueur, operation_effetuee )
+
+Tache_auto( ID_unique, ID_auto, action, frequence )
+
+Journal( ID_journal, #ID_joueur, #ID_article, date, agenda )
+
+Article( ID_article, title, text, image, categorie )
+
+Item( ID, #ID_niveau, #ID_famille, type, description, prix )
+
+Famille_Item( ID, nom )
+
+Niveau( ID, rarete )
+
+Magasin( ID, #ID_centre_equestre, #ID_club_hippique, #ID_infra, #ID_item, nom )
+
