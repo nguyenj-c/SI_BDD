@@ -10,7 +10,9 @@ Joueur_compte ( ID_joueur_compte, #ID_player, #ID_centre_equestre, #ID_chevaux, 
 
 Joueur ( ID_joueur, nom, prenom ,email, mdp, sexe, birthDate, phone, address, picture_account, description, website )
 
-Chevaux ( ID_cheval, #ID_etat, name, race, description )
+Cheval ( ID_cheval, #ID_etat, name, race, description )
+
+Etat( ID_etat, sante, moral, stress, fatigue, faim, propreté )
 
 Banque( ID_unique, ID_banque, #ID_joueur, montant, last_connexion )
 
