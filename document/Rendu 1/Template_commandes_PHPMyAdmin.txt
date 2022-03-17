@@ -3,18 +3,27 @@ CREATE TABLE horse_sim.club_hippique ( ID_gerant INT(2) NOT NULL AUTO_INCREMENT 
 							PRIMARY KEY (ID_gerant, ID_unique)) ENGINE = InnoDB;
 
 CREATE TABLE horse_sim.concours ( ID_concours INT(2) NOT NULL AUTO_INCREMENT , ID_unique INT(2) NOT NULL , ID_Item INT(2) NOT NULL , ID_infra INT(2) NOT NULL ,
-							date_deb TIMESTAMP NOT NULL , date_fin TIMESTAMP NOT NULL
+							date_deb TIMESTAMP NOT NULL , date_fin TIMESTAMP NOT NULL ,
 							PRIMARY KEY (ID_concours, ID_unique)) ENGINE = InnoDB;
 
 CREATE TABLE horse_sim.centre_equestre ( ID_unique INT(2) NOT NULL AUTO_INCREMENT , ID_Item INT(2) NOT NULL , ID_infra INT(2) NOT NULL ,
-							date_deb TIMESTAMP NOT NULL , date_fin TIMESTAMP NOT NULL
+							date_deb TIMESTAMP NOT NULL , date_fin TIMESTAMP NOT NULL ,
 							PRIMARY KEY (ID_gerant)) ENGINE = InnoDB;
 
 
 
+CREATE TABLE horse_sim.Chevaux ( ID_cheval INT(2) NOT NULL AUTO_INCREMENT , ID_etat INT(2) NOT NULL ,
+							name VARCHAR(20) NOT NULL , race VARCHAR(10) NOT NULL , description VARCHAR(50) NOT NULL ,
+							PRIMARY KEY (ID_cheval)) ENGINE = InnoDB;
 
 
+CREATE TABLE horse_sim.Banque ( ID_banque INT(2) NOT NULL AUTO_INCREMENT , ID_unique INT(2) NOT NULL , ID_joueur INT(2) NOT NULL ,
+							montant INT(5) NOT NULL , last_connexion DATETIME NOT NULL , 
+							PRIMARY KEY (ID_banque, ID_unique)) ENGINE = InnoDB;
 
+CREATE TABLE horse_sim.HistoriqueBanquaire ( ID_historiqueBanquaire INT(2) NOT NULL AUTO_INCREMENT , ID_unique INT(2) NOT NULL , ID_banque INT(2) NOT NULL , ID_joueur INT(2) NOT NULL ,
+							operation_effetuee VARCHAR(10) NOT NULL ,
+							PRIMARY KEY (ID_historiqueBanquaire , ID_unique)) ENGINE = InnoDB;
 
 CREATE TABLE horse_sim.Tache_auto ( ID_auto INT(2) NOT NULL AUTO_INCREMENT , ID_unique INT(2) NOT NULL , 
 							action VARCHAR(30) NOT NULL , frequence VARCHAR(10) NOT NULL , 

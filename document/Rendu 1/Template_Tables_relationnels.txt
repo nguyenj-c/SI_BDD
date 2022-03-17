@@ -6,7 +6,7 @@ Centre_equestre ( ID_unique, ID_equestre, #ID_gerant, #ID_infra_club, #ID_taches
 
 Infrastructure ( ID_unique, ID_infra, #ID_accomodation_capacity, #ID_items, type, niveau, description, infrastructure_family, prix, ressource_consumption )
 
-Joueur_compte ( ID_joueur_compte, #ID_player, #ID_centre_equestre, #ID_chevaux, #ID_club_hippique, #ID_items, #ID_tache, money, IP_address, date_Inscription, last_connexion )
+Joueur_compte ( ID_joueur_compte, #ID_joueur, #ID_centre_equestre, #ID_chevaux, #ID_club_hippique, #ID_items, #ID_tache, money, IP_address, date_Inscription, last_connexion )
 
 Joueur ( ID_joueur, nom, prenom ,email, mdp, sexe, birthDate, phone, address, picture_account, description, website )
 
