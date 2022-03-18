@@ -1,0 +1,35 @@
+Crée une base de donnée :
+CREATE DATABASE IF NOT EXISTS horse_sim;
+
+
+Afficher une base de données :
+SHOW DATABASES;
+
+Crée un administrateur avec tout les droit:
+
+Basé sur le cours
+GRANT ALL ON horse_sim.* TO root IDENTIFIED BY 'XXXXXX';
+
+Adminer
+CREATE USER 'Admin_horse'@'localhost' IDENTIFIED BY PASSWORD 'B39785ED425081DAC28274F93EE188C531AAC0C7';
+GRANT ALL PRIVILEGES ON horse\_sim. TO 'Admin_horse'@'localhost';
+
+Crée un administrateur n’ayant pas accès aux tables mais pouvant gérer les 
+permissions de l’ensemble des utilisateurs :
+
+CREATE USER 'admin_user'@'localhost' IDENTIFIED BY PASSWORD '90F72539728C8B4EC91F1F66905FE32982BA9E05';
+GRANT GRANT OPTION ON horse\_sim. TO 'admin_user'@'localhost';
+
+Crée un administrateur responsable gérant l’ensemble des index:
+
+CREATE USER 'admin_index'@'localhost' IDENTIFIED BY PASSWORD 'C36EFBE649FB00CD8A9F7A66F9514AF47C1FEA98'; 
+GRANT INDEX ON horse\_sim. TO 'admin_index'@'localhost';
+
+Crée un administrateur gérant le serveur MySQL et les processus :
+CREATE USER 'admin_server'@'localhost' IDENTIFIED BY PASSWORD '*B80DBADC54BBCAFD56461AAC1F25E652D472D4D6'; 
+GRANT PROCESS, RELOAD, SHUTDOWN ON . TO 'admin_server'@'localhost';
+
+Crée un administrateur/développeur pouvant gérer l’ensemble de l’extension de la BDD :
+CREATE USER 'admin_dev'@'localhost' IDENTIFIED BY PASSWORD '854D2C0B3F63B3A9598EFCA700A0B5ED3E1949E7'; 
+GRANT SELECT, INSERT, UPDATE ON horse\_sim. TO 'admin_dev'@'localhost';
+
