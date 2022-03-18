@@ -27,7 +27,7 @@ CREATE TABLE `horse_sim`.`chevaux` ( `ID_cheval` INT(2) NOT NULL AUTO_INCREMENT 
 							PRIMARY KEY (`ID_cheval`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`etat` ( `ID_etat` INT(2) NOT NULL AUTO_INCREMENT ,
-							`type` VARCHAR(10) NOT NULL ,
+							`type` ENUM('sante', 'moral', 'stress', 'fatigue', 'faim', 'proprete') NOT NULL ,
 							PRIMARY KEY (`ID_etat`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`banque` ( `ID_banque` INT(2) NOT NULL AUTO_INCREMENT , `ID_unique` INT(2) NOT NULL , `ID_joueur` INT(2) NOT NULL ,
