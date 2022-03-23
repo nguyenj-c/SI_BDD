@@ -17,8 +17,8 @@ GRANT ALL PRIVILEGES ON horse\_sim. TO 'Admin_horse'@'localhost';
 Crée un administrateur n’ayant pas accès aux tables mais pouvant gérer les 
 permissions de l’ensemble des utilisateurs :
 
-CREATE USER 'admin_user'@'localhost' IDENTIFIED BY PASSWORD '90F72539728C8B4EC91F1F66905FE32982BA9E05';
-GRANT CREATE USER, GRANT OPTION ON horse_sim. TO 'admin_user'@'localhost';
+CREATE USER 'admin_user'@'localhost' IDENTIFIED BY PASSWORD '*90F72539728C8B4EC91F1F66905FE32982BA9E05';
+GRANT GRANT OPTION, CREATE USER ON *.* TO 'admin_user'@'localhost';
 
 Crée un administrateur responsable gérant l’ensemble des index:
 
