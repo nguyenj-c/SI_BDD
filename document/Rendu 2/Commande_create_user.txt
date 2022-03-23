@@ -18,12 +18,12 @@ Crée un administrateur n’ayant pas accès aux tables mais pouvant gérer les
 permissions de l’ensemble des utilisateurs :
 
 CREATE USER 'admin_user'@'localhost' IDENTIFIED BY PASSWORD '90F72539728C8B4EC91F1F66905FE32982BA9E05';
-GRANT CREATE USER, GRANT OPTION ON horse\_sim. TO 'admin_user'@'localhost';
+GRANT CREATE USER, GRANT OPTION ON horse_sim. TO 'admin_user'@'localhost';
 
 Crée un administrateur responsable gérant l’ensemble des index:
 
 CREATE USER 'admin_index'@'localhost' IDENTIFIED BY PASSWORD 'C36EFBE649FB00CD8A9F7A66F9514AF47C1FEA98'; 
-GRANT INDEX ON horse\_sim.* TO 'admin_index'@'localhost';
+GRANT INDEX, ALTER ON horse_sim.* TO 'admin_index'@'localhost';
 
 Crée un administrateur gérant le serveur MySQL et les processus :
 
@@ -33,12 +33,12 @@ GRANT PROCESS, RELOAD, SHUTDOWN ON . TO 'admin_server'@'localhost';
 Crée un administrateur/développeur pouvant gérer l’ensemble de l’extension de la BDD :
 
 CREATE USER 'admin_dev'@'localhost' IDENTIFIED BY PASSWORD '854D2C0B3F63B3A9598EFCA700A0B5ED3E1949E7';
-GRANT DELETE, SELECT, INSERT, UPDATE ON horse\_sim. TO 'admin_dev'@'localhost';
+GRANT DELETE, SELECT, INSERT, UPDATE ON horse_sim.* TO 'admin_dev'@'localhost';
 
 Crée un administrateur/modérateur de communauté pouvant modifier ou supprimer l’ensemble des données « joueur »:
 
 CREATE USER 'admin_commu'@'localhost' IDENTIFIED BY PASSWORD '*86790AE20FF220402A07A556C828D89B0F8ADC58';
-GRANT DELETE, INSERT, SELECT, UPDATE ON joueur TO 'admin_commu'@'localhost';
+GRANT DELETE, INSERT, SELECT, UPDATE ON horse_sim.joueur TO 'admin_commu'@'localhost';
 
 Crée un administrateur/spécialiste métier pouvant visualiser et modifier l’ensemble des données « cheval » :
 
