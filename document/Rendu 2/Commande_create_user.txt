@@ -35,7 +35,7 @@ Crée un administrateur/développeur pouvant gérer l’ensemble de l’extensio
 CREATE USER 'admin_dev'@'localhost' IDENTIFIED BY PASSWORD '854D2C0B3F63B3A9598EFCA700A0B5ED3E1949E7';
 GRANT SELECT, INSERT, UPDATE ON horse\_sim. TO 'admin_dev'@'localhost';
 
-Crée un administrateur/modérateur de communauté pouvant :
+Crée un administrateur/modérateur de communauté pouvant modifier ou supprimer l’ensemble des données « joueur »:
 
 CREATE USER 'admin_commu'@'localhost' IDENTIFIED BY PASSWORD '*86790AE20FF220402A07A556C828D89B0F8ADC58';
 GRANT INSERT, SELECT, UPDATE ON joueur TO 'admin_commu'@'localhost';
