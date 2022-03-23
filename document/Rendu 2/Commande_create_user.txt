@@ -11,8 +11,15 @@ Basé sur le cours
 GRANT ALL ON horse_sim.* TO root IDENTIFIED BY 'XXXXXX';
 
 Adminer
+
+Exemple code :
+
 CREATE USER 'Admin_horse'@'localhost' IDENTIFIED BY PASSWORD 'B39785ED425081DAC28274F93EE188C531AAC0C7';
 GRANT ALL PRIVILEGES ON horse\_sim. TO 'Admin_horse'@'localhost';
+
+Sinon root Adminer existe déjà et on peux se connecter avec 
+Identifiant : adminer
+Mot de passe : *B39785ED425081DAC28274F93EE188C531AAC0C7
 
 Crée un administrateur n’ayant pas accès aux tables mais pouvant gérer les 
 permissions de l’ensemble des utilisateurs :
