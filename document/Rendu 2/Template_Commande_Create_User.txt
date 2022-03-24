@@ -1,68 +1,28 @@
-Crée une base de donnée :
 CREATE DATABASE IF NOT EXISTS horse_sim;
-
-
-Afficher une base de données :
-SHOW DATABASES;
-
-Crée un administrateur avec tout les droit:
-
-Basé sur le cours
-GRANT ALL ON horse_sim.* TO root IDENTIFIED BY 'XXXXXX';
-
-Exemple code :
-
-CREATE USER 'Admin_horse'@'localhost' IDENTIFIED BY PASSWORD 'B39785ED425081DAC28274F93EE188C531AAC0C7';
-GRANT ALL PRIVILEGES ON horse\_sim.* TO 'Admin_horse'@'localhost';
-
-Adminer possède déja un root :
-Identifiant : adminer
-Mot de passe : *B39785ED425081DAC28274F93EE188C531AAC0C7 ( Mot de passe hâché de la VM )
-
-Crée un administrateur n’ayant pas accès aux tables mais pouvant gérer les 
-permissions de l’ensemble des utilisateurs :
 
 CREATE USER 'admin_user'@'localhost' IDENTIFIED BY PASSWORD '*90F72539728C8B4EC91F1F66905FE32982BA9E05';
 GRANT GRANT OPTION, CREATE USER ON *.* TO 'admin_user'@'localhost';
 
-Crée un administrateur responsable gérant l’ensemble des index:
-
-CREATE USER 'admin_index'@'localhost' IDENTIFIED BY PASSWORD 'C36EFBE649FB00CD8A9F7A66F9514AF47C1FEA98'; 
+CREATE USER 'admin_index'@'localhost' IDENTIFIED BY PASSWORD 'C36EFBE649FB00CD8A9F7A66F9514AF47C1FEA98';
 GRANT INDEX, ALTER ON horse_sim.* TO 'admin_index'@'localhost';
-
-Crée un administrateur gérant le serveur MySQL et les processus :
 
 CREATE USER 'admin_server'@'localhost' IDENTIFIED BY PASSWORD '*B80DBADC54BBCAFD56461AAC1F25E652D472D4D6';
 GRANT PROCESS, RELOAD, SHUTDOWN ON *.* TO 'admin_server'@'localhost';
 
-Crée un administrateur/développeur pouvant gérer l’ensemble de l’extension de la BDD :
-
 CREATE USER 'admin_dev'@'localhost' IDENTIFIED BY PASSWORD '854D2C0B3F63B3A9598EFCA700A0B5ED3E1949E7';
 GRANT DELETE, SELECT, INSERT, UPDATE ON horse_sim.* TO 'admin_dev'@'localhost';
-
-Crée un administrateur/modérateur de communauté pouvant modifier ou supprimer l’ensemble des données « joueur »:
 
 CREATE USER 'admin_commu'@'localhost' IDENTIFIED BY PASSWORD '*86790AE20FF220402A07A556C828D89B0F8ADC58';
 GRANT DELETE, INSERT, SELECT, UPDATE ON horse_sim.joueur TO 'admin_commu'@'localhost';
 
-Crée un administrateur/spécialiste métier pouvant visualiser et modifier l’ensemble des données « cheval » :
-
 CREATE USER 'admin_job'@'localhost' IDENTIFIED BY PASSWORD '*74B50D978A5D37D2E10D4E572B7AFC7F33674F35';
 GRANT SELECT, INSERT, UPDATE ON horse_sim.chevaux TO 'admin_job'@'localhost';
-
-Crée un administrateur de concours pouvant visionner, insérer/modifier et supprimer l’ensemble
-des données « concours » :
 
 CREATE USER 'admin_concours'@'localhost' IDENTIFIED BY PASSWORD '*53E9AA01CE6FDA3C7EA64F380D4C0066A3A52336';
 GRANT DELETE, SELECT, INSERT, UPDATE ON horse_sim.concours TO 'admin_concours'@'localhost';
 
-Crée un administrateur/éditorialiste pouvant visionner, insérer/modifier et supprimer l’ensemble des données
-« journal » :
-
 CREATE USER 'admin_journal'@'localhost' IDENTIFIED BY PASSWORD 'A7CB48D68F7AE1018B75539070B2D8B6520ADC8D';
 GRANT DELETE, SELECT, INSERT, UPDATE ON horse_sim.journal TO 'admin_journal'@'localhost';
-
-Crée un client pouvant visionner les données « concours » et « journal » :
 
 CREATE USER 'client'@'localhost' IDENTIFIED BY PASSWORD '*459DEC76B4BAF7C0DCE265EDCA7EB68442C45E78';
 GRANT SELECT ON horse_sim.journal TO 'client'@'localhost';
