@@ -1,0 +1,21 @@
+GRANT ALL PRIVILEGES ON horse_sim.* TO 'admin_horse'@'localhost';
+
+GRANT GRANT OPTION, CREATE USER ON *.* TO 'admin_user'@'localhost';
+
+GRANT INDEX, ALTER ON horse_sim.* TO 'admin_index'@'localhost';
+
+GRANT PROCESS, RELOAD, SHUTDOWN ON *.* TO 'admin_server'@'localhost';
+
+GRANT DELETE, SELECT, INSERT, UPDATE ON horse_sim.* TO 'admin_dev'@'localhost';
+
+GRANT DELETE, INSERT, SELECT, UPDATE ON horse_sim.joueur TO 'admin_commu'@'localhost';
+
+GRANT SELECT, UPDATE ON horse_sim.chevaux TO 'admin_job'@'localhost';
+
+GRANT DELETE, SELECT, INSERT, UPDATE ON horse_sim.concours TO 'admin_concours'@'localhost';
+
+GRANT DELETE, SELECT, INSERT, UPDATE ON horse_sim.journal TO 'admin_journal'@'localhost';
+
+GRANT SELECT ON horse_sim.journal TO 'client'@'localhost';
+
+GRANT SELECT ON horse_sim.concours TO 'client'@'localhost';

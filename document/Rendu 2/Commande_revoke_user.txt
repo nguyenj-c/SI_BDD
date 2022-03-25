@@ -1,0 +1,20 @@
+REVOKE ALL PRIVILEGES ON horse_sim.* FROM 'admin_horse'@'localhost';
+
+REVOKE GRANT OPTION, CREATE USER ON *.* FROM 'admin_user'@'localhost';
+
+REVOKE INDEX, ALTER ON horse_sim.* FROM 'admin_index'@'localhost';
+
+REVOKE PROCESS, RELOAD, SHUTDOWN ON *.* FROM 'admin_server'@'localhost';
+
+REVOKE DELETE, SELECT, INSERT, UPDATE ON horse_sim.* FROM 'admin_dev'@'localhost';
+
+REVOKE DELETE, INSERT, SELECT, UPDATE ON horse_sim.joueur FROM 'admin_commu'@'localhost';
+
+REVOKE SELECT, UPDATE ON horse_sim.chevaux FROM 'admin_job'@'localhost';
+
+REVOKE DELETE, SELECT, INSERT, UPDATE ON horse_sim.concours FROM 'admin_concours'@'localhost';
+
+REVOKE DELETE, SELECT, INSERT, UPDATE ON horse_sim.journal FROM 'admin_journal'@'localhost';
+
+REVOKE SELECT ON horse_sim.journal FROM 'client'@'localhost';
+REVOKE SELECT ON horse_sim.concours FROM 'client'@'localhost';
