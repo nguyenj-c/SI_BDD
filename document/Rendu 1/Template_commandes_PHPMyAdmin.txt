@@ -14,7 +14,7 @@ CREATE TABLE `horse_sim`.`infrastructure` ( `ID_infra` INT(2) NOT NULL AUTO_INCR
 							`type` VARCHAR(10) NOT NULL , `niveau` INT(1) NOT NULL , `description` VARCHAR(50) NOT NULL , `infrastructure_family` VARCHAR(10) NOT NULL , `prix` INT(3) NOT NULL , `ressource_consumption` INT(3) NOT NULL , 
 							PRIMARY KEY (`ID_infra`,`ID_unique`)) ENGINE = InnoDB;
 
-CREATE TABLE `horse_sim`.`joueur_compte` ( `ID_joueur_compte` INT(2) NOT NULL AUTO_INCREMENT , `ID_joueur` INT(2) NOT NULL AUTO_INCREMENT , `ID_centre_equestre` INT(2) NOT NULL , `ID_chevaux` INT(2) NOT NULL , `ID_club_hippique` INT(2) NOT NULL , `ID_items` INT(2) NOT NULL , `ID_tache` INT(2) NOT NULL , 
+CREATE TABLE `horse_sim`.`joueur_compte` ( `ID_joueur_compte` INT(2) NOT NULL AUTO_INCREMENT , `ID_joueur` INT(2) NOT NULL , `ID_centre_equestre` INT(2) NOT NULL , `ID_chevaux` INT(2) NOT NULL , `ID_club_hippique` INT(2) NOT NULL , `ID_items` INT(2) NOT NULL , `ID_tache` INT(2) NOT NULL ,
 							`money` INT(3) NOT NULL , `IP_address` VARCHAR(15) NOT NULL , `date_Inscription` DATE NOT NULL , `last_connexion` DATETIME NOT NULL , 
 							PRIMARY KEY (`ID_joueur_compte`,`ID_joueur`)) ENGINE = InnoDB;
 
