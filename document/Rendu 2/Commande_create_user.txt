@@ -7,7 +7,7 @@ SHOW DATABASES;
 Crée un administrateur avec tout les droit:
 
 CREATE USER 'Admin_horse'@'localhost' IDENTIFIED BY PASSWORD '*B39785ED425081DAC28274F93EE188C531AAC0C7';
-GRANT ALL PRIVILEGES ON horse\_sim.* TO 'Admin_horse'@'localhost';
+GRANT ALL PRIVILEGES ON horse_sim.* TO 'Admin_horse'@'localhost';
 
 Crée un administrateur n’ayant pas accès aux tables mais pouvant gérer les 
 permissions de l’ensemble des utilisateurs :
