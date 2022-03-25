@@ -1,4 +1,7 @@
+CREATE DATABASE `horse_sim` COLLATE 'utf8_general_ci';
+
 CREATE TABLE `horse_sim`.`club_hippique` ( `ID_gerant` INT(2) NOT NULL AUTO_INCREMENT , `ID_unique` INT(2) NOT NULL ,
+
 							`capacite` INT(2) NOT NULL , `ID_infra` INT(2) NOT NULL , `ID_concours` INT(2) NOT NULL , 
 							PRIMARY KEY (`ID_gerant`,`ID_unique`)) ENGINE = InnoDB;
 
