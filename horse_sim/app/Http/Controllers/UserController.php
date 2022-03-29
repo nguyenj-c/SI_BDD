@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use \Illuminate\Contracts\View\View as View;
+use \Illuminate\Contracts\View\View;
 
 class UserController extends Controller
 {
@@ -17,9 +17,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        DB::enableQueryLog();
-        $users = DB::select('select * from joueur');
+        // DB::enableQueryLog();
+        $users = "hey";
 
-        return view('user', ['users' => $users]);
+        return view('user', compact('users'));
     }
 }

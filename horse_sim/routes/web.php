@@ -16,6 +16,4 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/users', function () {
-    return view('user', ['users' => (new App\Http\Controllers\UserController)->index()]);
-});
+Route::get('/users', [UserController::class, 'index']);
