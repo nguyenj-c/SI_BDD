@@ -12,9 +12,11 @@ Joueur ( ID_joueur, nom, prenom , email, mdp, sexe, birthDate, phone, address, p
 
 Cheval ( ID, #ID_attribut, #ID_etat, nom, race, description )
 
-Cheval_attribut (  )
+Cheval_attribut ( ID, resistance, endurance, detente, vitesse, sociabilite, intelligence, temperament )
 
-Etat( ID, type )
+Etat ( ID, sante, moral, stress, fatigue, faim, proprete )
+
+Liste ( ID, #ID_Cheval, items )
 
 Banque( ID, #ID_joueur, montant_compte )
 
