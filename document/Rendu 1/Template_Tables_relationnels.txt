@@ -1,28 +1,30 @@
-Club_hippiques( ID_unique,ID_gerant, #ID_infra, #ID_concours, capacite )
+Club_hippiques( ID, #ID_infra, #ID_concours, capacite )
 
-Concours( ID_unique, ID_concours, #ID_Item, #ID_infra , date_deb, date_fin )
+Concours( ID, #ID_Item, #ID_infra , date_deb, date_fin )
 
-Centre_equestre ( ID_unique, ID_equestre, #ID_gerant, #ID_infra_club, #ID_taches_auto, capacite )
+Centre_equestre ( ID, #ID_club, #ID_infra, #ID_taches_auto, capacite )
 
-Infrastructure ( ID_unique, ID_infra, #ID_accomodation_capacity, #ID_items, type, niveau, description, infrastructure_family, prix, ressource_consumption )
+Infrastructure ( ID, #ID_accomodation_capacity, #ID_items, type, niveau, description, infrastructure_family, prix, ressource_consumption )
 
 Joueur_compte ( ID_joueur_compte, #ID_joueur, #ID_centre_equestre, #ID_chevaux, #ID_club_hippique, #ID_items, #ID_tache, money, IP_address, date_Inscription, last_connexion )
 
 Joueur ( ID_joueur, nom, prenom , email, mdp, sexe, birthDate, phone, address, profile_picture, description, website )
 
-Cheval ( ID_cheval, #ID_etat, name, race, description )
+Cheval ( ID, #ID_attribut, #ID_etat, nom, race, description )
 
-Etat( ID_etat, type )
+Cheval_attribut (  )
 
-Banque( ID_unique, ID_banque, #ID_joueur, montant, last_connexion )
+Etat( ID, type )
 
-HistoriqueBanquaire( ID_unique, ID_historiqueBanquaire, #ID_banque, #ID_joueur, operation_effetuee )
+Banque( ID, #ID_joueur, montant_compte )
 
-Tache_auto( ID_unique, ID_auto, action, frequence )
+HistoriqueBanquaire( ID, #ID_banque, #ID_joueur, operation_effetuee, montant, last_connexion )
 
-Journal( ID_journal, #ID_joueur, #ID_article, date, agenda, top_events )
+Tache_auto( ID, action, frequence )
 
-Article( ID_article, title, text, image, category )
+Journal( ID, #ID_joueur, #ID_article, date, agenda, top_events )
+
+Article( ID, title, text, image, category )
 
 Item( ID, #ID_niveau, #ID_famille, type, description, prix )
 
@@ -30,5 +32,5 @@ Famille_Item( ID, nom )
 
 Niveau( ID, rarete )
 
-Magasin( ID, #ID_centre_equestre, #ID_club_hippique, #ID_infra, #ID_item, nom )
+Magasin( ID, #ID_centre_equestre, #ID_club, #ID_infra, #ID_item, nom )
 
