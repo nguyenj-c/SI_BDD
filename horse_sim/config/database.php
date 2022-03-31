@@ -46,21 +46,29 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'http://172.23.149.183/'),
-            'port' => env('DB_PORT', '12322'),
+            'host' => env('DB_HOST', '192.168.0.24'),
+            'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'horse_sim'),
-            'username' => env('DB_USERNAME', 'adminer'),
-            'password' => env('DB_PASSWORD', 'Admin1234.'),
-            'unix_socket' => env('DB_SOCKET', ''),
+            'username' => env('DB_USERNAME', 'admin_horse'),
+            'password' => env('DB_PASSWORD', 'admin_horse'),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
-            'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
+        ],
+
+        'testing' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST', '192.168.0.24'),
+            'port' => env('DB_PORT', '12322'),
+            'database' => env('DB_DATABASE', 'horse_sim'),
+            'username' => env('DB_USERNAME', 'admin_horse'),
+            'password' => env('DB_PASSWORD', 'admin_horse'),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
         ],
 
         'pgsql' => [

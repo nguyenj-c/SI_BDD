@@ -2,23 +2,21 @@ Club_hippiques( ID, #ID_infra, #ID_concours, capacite )
 
 Concours( ID, #ID_Item, #ID_infra , date_deb, date_fin )
 
-Centre_equestre ( ID, #ID_club, #ID_infra, #ID_taches_auto, capacite )
+Centre_equestre ( ID, #ID_club, #ID_infra, #ID_taches, capacite )
 
 Infrastructure ( ID, #ID_accomodation_capacity, #ID_items, type, niveau, description, infrastructure_family, prix, ressource_consumption )
 
-Joueur_compte ( ID_joueur_compte, #ID_joueur, #ID_centre_equestre, #ID_chevaux, #ID_club_hippique, #ID_items, #ID_tache, money, IP_address, date_Inscription, last_connexion )
+Joueur_compte ( ID_joueur_compte, #ID_joueur, #ID_centre, #ID_chevaux, #ID_club, #ID_items, #ID_taches, username, mdp, date_Inscription, last_connexion )
 
-Joueur ( ID_joueur, nom, prenom , email, mdp, sexe, birthDate, phone, address, profile_picture, description, website )
+Joueur ( ID_joueur, nom, prenom , email, sexe, birthDate, phone, address, IP_address, profile_picture, description, website )
 
-Cheval ( ID, #ID_attribut, #ID_etat, nom, race, description )
+Cheval ( ID, #ID_attribut, #ID_etat, #ID_items, nom, race, description )
 
 Cheval_attribut ( ID, resistance, endurance, detente, vitesse, sociabilite, intelligence, temperament )
 
 Etat ( ID, sante, moral, stress, fatigue, faim, proprete )
 
-Liste ( ID, #ID_Cheval, items )
-
-Banque( ID, #ID_joueur, montant_compte )
+Banque_compte( ID, #ID_joueur, montant_compte )
 
 HistoriqueBanquaire( ID, #ID_banque, #ID_joueur, operation_effetuee, montant, last_connexion )
 
@@ -34,5 +32,5 @@ Famille_Item( ID, nom )
 
 Niveau( ID, rarete )
 
-Magasin( ID, #ID_centre_equestre, #ID_club, #ID_infra, #ID_item, nom )
+Magasin( ID, #ID_centre, #ID_club, #ID_infra, #ID_items, nom )
 

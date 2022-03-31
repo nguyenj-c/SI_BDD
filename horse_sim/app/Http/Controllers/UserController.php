@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use Symfony\Component\HttpFoundation\Response;
 use \Illuminate\Contracts\View\View;
 
 class UserController extends Controller
@@ -17,8 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        // DB::enableQueryLog();
-        $users = "hey";
+        //$users = "hey";
+        $users = DB::table('joueur')->get();
 
         return view('user', compact('users'));
     }
