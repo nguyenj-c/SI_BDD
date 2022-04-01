@@ -21,11 +21,11 @@ CREATE TABLE `horse_sim`.`joueur_compte` ( `ID_joueur_compte` INT(2) NOT NULL AU
 							PRIMARY KEY (`ID_joueur_compte`,`ID_joueur`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`joueur` ( `ID_joueur` INT(2) NOT NULL AUTO_INCREMENT , 
-							`nom` VARCHAR(30) NOT NULL , `prenom` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `sexe` ENUM('H','F') NOT NULL , `birthDate` DATE NOT NULL , `phone` INT(10) NOT NULL , `address` VARCHAR(50) NOT NULL ,  `IP_address` VARCHAR(15) NOT NULL , `profile_picture` VARCHAR(60) NOT NULL , `description` VARCHAR(50) NOT NULL , `website` VARCHAR(60) NOT NULL ,
+							`nom` VARCHAR(30) NOT NULL , `prenom` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `sexe` ENUM('H','F') NOT NULL , `birthDate` DATE NOT NULL , `phone` INT(20) NOT NULL , `address` VARCHAR(255) NOT NULL ,  `IP_address` VARCHAR(15) NOT NULL , `profile_picture` VARCHAR(100) NOT NULL , `description` VARCHAR(50) NOT NULL , `website` VARCHAR(100) NOT NULL ,
 							PRIMARY KEY (`ID_joueur`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`cheval` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_attribut` INT(2) NOT NULL , `ID_etat` INT(2) NOT NULL ,`ID_items` INT(2) NOT NULL ,
-							`nom` VARCHAR(20) NOT NULL , `race` VARCHAR(10) NOT NULL , `description` VARCHAR(50) NOT NULL ,
+							`nom` VARCHAR(30) NOT NULL , `race` VARCHAR(20) NOT NULL , `description` VARCHAR(50) NOT NULL ,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`cheval_attribut` (`ID` INT(2) NOT NULL AUTO_INCREMENT ,
@@ -57,7 +57,7 @@ CREATE TABLE `horse_sim`.`journal` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_j
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`article` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , 
-							`title` VARCHAR(20) NOT NULL , `text` VARCHAR(50) NOT NULL , `image` VARCHAR(40) NOT NULL , `category` VARCHAR(10) NOT NULL , 
+							`title` VARCHAR(20) NOT NULL , `text` VARCHAR(50) NOT NULL , `image` VARCHAR(100) NOT NULL , `category` VARCHAR(10) NOT NULL ,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`item` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_niveau` INT(2) NOT NULL , `ID_famille` INT(2) NOT NULL ,
@@ -65,7 +65,7 @@ CREATE TABLE `horse_sim`.`item` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_nive
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`famille_item` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , 
-							`nom` VARCHAR(20) NOT NULL , 
+							`nom` VARCHAR(30) NOT NULL ,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`niveau` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , 
@@ -73,5 +73,5 @@ CREATE TABLE `horse_sim`.`niveau` ( `ID` INT(2) NOT NULL AUTO_INCREMENT ,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`Magasin` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_centre` INT(2) NOT NULL , `ID_club` INT(2) NOT NULL , `ID_infra` INT(2) NOT NULL , `ID_items` INT(2) NOT NULL ,
-							`nom` VARCHAR(20) NOT NULL ,
+							`nom` VARCHAR(30) NOT NULL ,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
