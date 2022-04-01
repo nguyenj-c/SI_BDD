@@ -21,7 +21,7 @@ class JoueurCompte extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'ID';
+    protected $primaryKey = 'ID_joueur_compte';
 
     protected $connection = 'mysql';
 }
