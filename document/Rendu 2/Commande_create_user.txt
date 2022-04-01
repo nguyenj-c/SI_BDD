@@ -44,7 +44,7 @@ GRANT DELETE, INSERT, SELECT, UPDATE ON horse_sim.joueur TO 'admin_commu'@'local
 Créer un administrateur/spécialiste métier pouvant visualiser et modifier l’ensemble des données « cheval » :
 
 CREATE USER 'admin_job'@'localhost' IDENTIFIED BY PASSWORD '*74B50D978A5D37D2E10D4E572B7AFC7F33674F35';
-GRANT SELECT, UPDATE ON horse_sim.chevaux TO 'admin_job'@'localhost';
+GRANT SELECT, UPDATE ON horse_sim.cheval TO 'admin_job'@'localhost';
 
 Créer un administrateur de concours pouvant visionner, insérer/modifier et supprimer l’ensemble
 des données « concours » :

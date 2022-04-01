@@ -10,7 +10,7 @@ GRANT DELETE, SELECT, INSERT, UPDATE ON horse_sim.* TO 'admin_dev'@'localhost';
 
 GRANT DELETE, INSERT, SELECT, UPDATE ON horse_sim.joueur TO 'admin_commu'@'localhost';
 
-GRANT SELECT, UPDATE ON horse_sim.chevaux TO 'admin_job'@'localhost';
+GRANT SELECT, UPDATE ON horse_sim.cheval TO 'admin_job'@'localhost';
 
 GRANT DELETE, SELECT, INSERT, UPDATE ON horse_sim.concours TO 'admin_concours'@'localhost';
 

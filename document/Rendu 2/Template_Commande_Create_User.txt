@@ -19,7 +19,7 @@ CREATE USER 'admin_commu'@'localhost' IDENTIFIED BY PASSWORD '*86790AE20FF220402
 GRANT DELETE, INSERT, SELECT, UPDATE ON horse_sim.joueur TO 'admin_commu'@'localhost';
 
 CREATE USER 'admin_job'@'localhost' IDENTIFIED BY PASSWORD '*74B50D978A5D37D2E10D4E572B7AFC7F33674F35';
-GRANT SELECT, UPDATE ON horse_sim.chevaux TO 'admin_job'@'localhost';
+GRANT SELECT, UPDATE ON horse_sim.cheval TO 'admin_job'@'localhost';
 
 CREATE USER 'admin_concours'@'localhost' IDENTIFIED BY PASSWORD '*53E9AA01CE6FDA3C7EA64F380D4C0066A3A52336';
 GRANT DELETE, SELECT, INSERT, UPDATE ON horse_sim.concours TO 'admin_concours'@'localhost';

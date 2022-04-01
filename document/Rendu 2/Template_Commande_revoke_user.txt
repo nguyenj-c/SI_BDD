@@ -10,7 +10,7 @@ REVOKE DELETE, SELECT, INSERT, UPDATE ON horse_sim.* FROM 'admin_dev'@'localhost
 
 REVOKE DELETE, INSERT, SELECT, UPDATE ON horse_sim.joueur FROM 'admin_commu'@'localhost';
 
-REVOKE SELECT, UPDATE ON horse_sim.chevaux FROM 'admin_job'@'localhost';
+REVOKE SELECT, UPDATE ON horse_sim.cheval FROM 'admin_job'@'localhost';
 
 REVOKE DELETE, SELECT, INSERT, UPDATE ON horse_sim.concours FROM 'admin_concours'@'localhost';
 
