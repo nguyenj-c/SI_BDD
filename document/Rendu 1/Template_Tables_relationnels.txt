@@ -14,7 +14,9 @@ Cheval ( ID, #ID_attribut, #ID_etat, #ID_items, nom, race, description )
 
 Cheval_attribut ( ID, resistance, endurance, detente, vitesse, sociabilite, intelligence, temperament )
 
-Etat ( ID, sante, moral, stress, fatigue, faim, proprete )
+Etat ( ID, #ID_proprete, sante, moral, stress, fatigue, faim )
+
+Proprete ( ID, #ID_cheval, maladies, parasites, blessures )
 
 Banque_compte( ID, #ID_joueur, montant_compte )
 

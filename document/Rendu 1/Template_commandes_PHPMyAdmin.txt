@@ -30,11 +30,15 @@ CREATE TABLE `horse_sim`.`cheval` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_at
 
 CREATE TABLE `horse_sim`.`cheval_attribut` (`ID` INT(2) NOT NULL AUTO_INCREMENT ,
                             `resistance` INT(1) NOT NULL , `endurance` INT(1) NOT NULL , `detente` INT(1) NOT NULL , `vitesse` INT(1) NOT NULL , `sociabilite` INT(1) NOT NULL , `intelligence` INT(1) NOT NULL , `temperament` INT(1) NOT NULL ,
-                			PRIMARY KEY (`ID`)) ENGINE = InnoDB;) ENGINE = InnoDB;
+                			PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
-CREATE TABLE `horse_sim`.`etat` ( `ID` INT(2) NOT NULL AUTO_INCREMENT ,
-							`sante` TINYINT(1) NOT NULL , `moral` TINYINT(1) NOT NULL , `stress` TINYINT(1) NOT NULL ,  `fatigue` TINYINT(1) NOT NULL ,  `faim` TINYINT(1) NOT NULL,  `proprete` TINYINT(1) NOT NULL ,
+CREATE TABLE `horse_sim`.`etat` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_proprete` INT(2) NOT NULL,
+							`sante` TINYINT(1) NOT NULL , `moral` TINYINT(1) NOT NULL , `stress` TINYINT(1) NOT NULL ,  `fatigue` TINYINT(1) NOT NULL ,  `faim` TINYINT(1) NOT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
+
+CREATE TABLE `horse_sim`.`proprete` (`ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_cheval` INT(2) NOT NULL ,
+                            `maladies` TINYINT(1) NOT NULL , `parasites` TINYINT(1) NOT NULL , `blessures` TINYINT(1) NOT NULL ,
+                            PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`banque_compte` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_joueur` INT(2) NOT NULL ,
 							`montant_compte` INT(5) NOT NULL , 
