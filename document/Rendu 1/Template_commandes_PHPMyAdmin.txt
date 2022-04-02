@@ -1,6 +1,6 @@
 CREATE DATABASE `horse_sim` COLLATE 'utf8_general_ci';
 
-CREATE TABLE `horse_sim`.`club_hippique` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_infra` INT(2) NOT NULL , `ID_concours` INT(2) NOT NULL ,
+CREATE TABLE `horse_sim`.`club_hippiques` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_infra` INT(2) NOT NULL , `ID_concours` INT(2) NOT NULL ,
 							`capacite` INT(2) NOT NULL ,  
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
@@ -13,15 +13,15 @@ CREATE TABLE `horse_sim`.`centre_equestre` ( `ID` INT(2) NOT NULL AUTO_INCREMENT
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`infrastructure` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_accomodation_capacity` INT(2) NOT NULL , `ID_items` INT(2) NOT NULL , 
-							`type` VARCHAR(10) NOT NULL , `niveau` INT(1) NOT NULL , `description` VARCHAR(50) NOT NULL , `infrastructure_family` VARCHAR(10) NOT NULL , `prix` INT(3) NOT NULL , `ressource_consumption` INT(3) NOT NULL , 
+							`type` VARCHAR(20) NOT NULL , `niveau` INT(1) NOT NULL , `description` VARCHAR(50) NOT NULL , `infrastructure_family` VARCHAR(10) NOT NULL , `prix` INT(3) NOT NULL , `ressource_consumption` INT(3) NOT NULL ,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`joueur_compte` ( `ID_joueur_compte` INT(2) NOT NULL AUTO_INCREMENT , `ID_joueur` INT(2) NOT NULL , `ID_centre` INT(2) NOT NULL , `ID_chevaux` INT(2) NOT NULL , `ID_club` INT(2) NOT NULL , `ID_items` INT(2) NOT NULL , `ID_taches` INT(2) NOT NULL ,
-							`username` INT(3) NOT NULL ,  `mdp` VARCHAR(50) NOT NULL , `date_Inscription` DATE NOT NULL , `last_connexion` DATETIME NOT NULL , 
+							`username` VARCHAR(30) NOT NULL ,  `mdp` VARCHAR(50) NOT NULL , `date_Inscription` DATE NOT NULL , `last_connexion` DATETIME NOT NULL ,
 							PRIMARY KEY (`ID_joueur_compte`,`ID_joueur`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`joueur` ( `ID_joueur` INT(2) NOT NULL AUTO_INCREMENT , 
-							`nom` VARCHAR(30) NOT NULL , `prenom` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `sexe` ENUM('H','F') NOT NULL , `birthDate` DATE NOT NULL , `phone` INT(20) NOT NULL , `address` VARCHAR(255) NOT NULL ,  `IP_address` VARCHAR(15) NOT NULL , `profile_picture` VARCHAR(100) NOT NULL , `description` VARCHAR(50) NOT NULL , `website` VARCHAR(100) NOT NULL ,
+							`nom` VARCHAR(30) NOT NULL , `prenom` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `sexe` ENUM('H','F') NOT NULL , `birthDate` DATE NOT NULL , `phone` VARCHAR(20) NOT NULL , `address` VARCHAR(255) NOT NULL ,  `IP_address` VARCHAR(15) NOT NULL , `profile_picture` VARCHAR(100) NOT NULL , `description` VARCHAR(50) NOT NULL , `website` VARCHAR(150) NOT NULL ,
 							PRIMARY KEY (`ID_joueur`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`cheval` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_attribut` INT(2) NOT NULL , `ID_etat` INT(2) NOT NULL ,`ID_items` INT(2) NOT NULL ,
@@ -72,6 +72,6 @@ CREATE TABLE `horse_sim`.`niveau` ( `ID` INT(2) NOT NULL AUTO_INCREMENT ,
 							`rarete` VARCHAR(10) NOT NULL ,  
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
-CREATE TABLE `horse_sim`.`Magasin` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_centre` INT(2) NOT NULL , `ID_club` INT(2) NOT NULL , `ID_infra` INT(2) NOT NULL , `ID_items` INT(2) NOT NULL ,
+CREATE TABLE `horse_sim`.`magasin` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_centre` INT(2) NOT NULL , `ID_club` INT(2) NOT NULL , `ID_infra` INT(2) NOT NULL , `ID_items` INT(2) NOT NULL ,
 							`nom` VARCHAR(30) NOT NULL ,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;

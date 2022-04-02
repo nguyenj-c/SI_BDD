@@ -20,7 +20,7 @@ Proprete ( ID, #ID_cheval, maladies, parasites, blessures )
 
 Banque_compte( ID, #ID_joueur, montant_compte )
 
-HistoriqueBanquaire( ID, #ID_banque, #ID_joueur, operation_effetuee, montant, last_connexion )
+HistoriqueBanquaire( ID, #ID_banque_compte, #ID_joueur, operation_effetuee, montant, last_connexion )
 
 Tache_auto( ID, action, frequence )
 
