@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use \Illuminate\Contracts\View\View;
 

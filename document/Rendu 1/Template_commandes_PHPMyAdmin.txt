@@ -2,76 +2,95 @@ CREATE DATABASE `horse_sim` COLLATE 'utf8_general_ci';
 
 CREATE TABLE `horse_sim`.`club_hippiques` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_infra` INT(2) NOT NULL , `ID_concours` INT(2) NOT NULL ,
 							`capacite` INT(2) NOT NULL ,  
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`concours` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_Item` INT(2) NOT NULL , `ID_infra` INT(2) NOT NULL ,
 							`date_deb` TIMESTAMP NOT NULL , `date_fin` TIMESTAMP NOT NULL ,
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`centre_equestre` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_club` INT(2) NOT NULL , `ID_infra` INT(2) NOT NULL , `ID_taches` INT(2) NOT NULL ,
 							`capacite` INT(3) NOT NULL , 
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`infrastructure` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_accomodation_capacity` INT(2) NOT NULL , `ID_items` INT(2) NOT NULL , 
 							`type` VARCHAR(20) NOT NULL , `niveau` INT(1) NOT NULL , `description` VARCHAR(50) NOT NULL , `infrastructure_family` VARCHAR(10) NOT NULL , `prix` INT(3) NOT NULL , `ressource_consumption` INT(3) NOT NULL ,
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`joueur_compte` ( `ID_joueur_compte` INT(2) NOT NULL AUTO_INCREMENT , `ID_joueur` INT(2) NOT NULL , `ID_centre` INT(2) NOT NULL , `ID_chevaux` INT(2) NOT NULL , `ID_club` INT(2) NOT NULL , `ID_items` INT(2) NOT NULL , `ID_taches` INT(2) NOT NULL ,
-							`username` VARCHAR(30) NOT NULL ,  `mdp` VARCHAR(50) NOT NULL , `date_Inscription` DATE NOT NULL , `last_connexion` DATETIME NOT NULL ,
+							`username` VARCHAR(30) NOT NULL ,  `mdp` VARCHAR(50) NOT NULL , `last_connexion` DATETIME NOT NULL ,
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID_joueur_compte`,`ID_joueur`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`joueur` ( `ID_joueur` INT(2) NOT NULL AUTO_INCREMENT , 
 							`nom` VARCHAR(30) NOT NULL , `prenom` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `sexe` ENUM('H','F') NOT NULL , `birthDate` DATE NOT NULL , `phone` VARCHAR(20) NOT NULL , `address` VARCHAR(255) NOT NULL ,  `IP_address` VARCHAR(15) NOT NULL , `profile_picture` VARCHAR(100) NOT NULL , `description` VARCHAR(50) NOT NULL , `website` VARCHAR(150) NOT NULL ,
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID_joueur`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`cheval` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_attribut` INT(2) NOT NULL , `ID_etat` INT(2) NOT NULL ,`ID_items` INT(2) NOT NULL ,
 							`nom` VARCHAR(30) NOT NULL , `race` VARCHAR(20) NOT NULL , `description` VARCHAR(50) NOT NULL ,
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`cheval_attribut` (`ID` INT(2) NOT NULL AUTO_INCREMENT ,
                             `resistance` INT(1) NOT NULL , `endurance` INT(1) NOT NULL , `detente` INT(1) NOT NULL , `vitesse` INT(1) NOT NULL , `sociabilite` INT(1) NOT NULL , `intelligence` INT(1) NOT NULL , `temperament` INT(1) NOT NULL ,
+                			`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
                 			PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`etat` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_proprete` INT(2) NOT NULL,
 							`sante` TINYINT(1) NOT NULL , `moral` TINYINT(1) NOT NULL , `stress` TINYINT(1) NOT NULL ,  `fatigue` TINYINT(1) NOT NULL ,  `faim` TINYINT(1) NOT NULL,
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`proprete` (`ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_cheval` INT(2) NOT NULL ,
                             `maladies` TINYINT(1) NOT NULL , `parasites` TINYINT(1) NOT NULL , `blessures` TINYINT(1) NOT NULL ,
+                            `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
                             PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`banque_compte` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_joueur` INT(2) NOT NULL ,
 							`montant_compte` INT(5) NOT NULL , 
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`historiquebanquaire` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_banque_compte` INT(2) NOT NULL ,
 							`operation_effetuee` VARCHAR(10) NOT NULL , `montant` INT(5) NOT NULL , `last_connexion` DATETIME NOT NULL , 
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`tache_auto` ( `ID` INT(2) NOT NULL AUTO_INCREMENT ,
 							`action` VARCHAR(30) NOT NULL , `frequence` VARCHAR(10) NOT NULL , 
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`journal` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_joueur` INT(2) NOT NULL , `ID_article` INT(2) NOT NULL , 
 							`date` TIMESTAMP NOT NULL , `agenda` VARCHAR(45) NOT NULL , `top_events` VARCHAR(45) NOT NULL , 
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`article` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , 
 							`title` VARCHAR(20) NOT NULL , `text` VARCHAR(50) NOT NULL , `image` VARCHAR(100) NOT NULL , `category` VARCHAR(10) NOT NULL ,
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`item` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_niveau` INT(2) NOT NULL , `ID_famille` INT(2) NOT NULL ,
 							`type` VARCHAR(20) NOT NULL , `description` VARCHAR(50) NOT NULL , `prix` INT(3) NOT NULL ,
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`famille_item` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , 
 							`nom` VARCHAR(30) NOT NULL ,
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`niveau` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , 
-							`rarete` VARCHAR(10) NOT NULL ,  
+							`rarete` VARCHAR(10) NOT NULL ,
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 CREATE TABLE `horse_sim`.`magasin` ( `ID` INT(2) NOT NULL AUTO_INCREMENT , `ID_centre` INT(2) NOT NULL , `ID_club` INT(2) NOT NULL , `ID_infra` INT(2) NOT NULL , `ID_items` INT(2) NOT NULL ,
 							`nom` VARCHAR(30) NOT NULL ,
+							`created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT NULL,
 							PRIMARY KEY (`ID`)) ENGINE = InnoDB;

@@ -24,4 +24,16 @@ class Infrastructure extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'ID_accomodation_capacity',
+        'ID_items',
+        'type',
+        'niveau',
+        'description',
+        'infrastructure_family',
+        'prix',
+        'ressource_consumption'
+    ];
 }

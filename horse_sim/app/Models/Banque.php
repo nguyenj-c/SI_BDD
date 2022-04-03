@@ -24,4 +24,10 @@ class Banque extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'ID_joueur',
+        'montant_compte'
+    ];
 }

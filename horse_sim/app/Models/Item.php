@@ -24,4 +24,13 @@ class Item extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'ID_niveau',
+        'ID_famille',
+        'type',
+        'description',
+        'prix'
+    ];
 }

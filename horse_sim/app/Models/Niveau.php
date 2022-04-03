@@ -24,4 +24,9 @@ class Niveau extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'rarete'
+    ];
 }

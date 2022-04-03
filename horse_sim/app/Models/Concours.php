@@ -24,4 +24,12 @@ class Concours extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'ID_Item',
+        'ID_infra',
+        'date_deb',
+        'date_fin'
+    ];
 }

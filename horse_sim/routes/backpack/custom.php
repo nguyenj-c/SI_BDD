@@ -35,5 +35,4 @@ Route::group([
     Route::crud('magasin', 'MagasinCrudController');
     Route::crud('niveau', 'NiveauCrudController');
     Route::crud('tache-auto', 'TacheAutoCrudController');
-    Route::crud('test', 'TestCrudController');
 }); // this should be the absolute last line of this file

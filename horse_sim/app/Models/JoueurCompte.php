@@ -24,4 +24,18 @@ class JoueurCompte extends Model
     protected $primaryKey = 'ID_joueur_compte';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID_joueur_compte',
+        'ID_joueur',
+        'ID_centre',
+        'ID_chevaux',
+        'ID_club',
+        'ID_items',
+        'ID_taches',
+        'username',
+        'mdp',
+        'created_at',
+        'last_connexion'
+    ];
 }

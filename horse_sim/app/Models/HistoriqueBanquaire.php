@@ -24,4 +24,12 @@ class HistoriqueBanquaire extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'ID_banque_compte',
+        'operation_effetuee',
+        'montant',
+        'last_connexion'
+    ];
 }

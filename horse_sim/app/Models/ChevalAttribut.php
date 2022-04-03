@@ -24,4 +24,15 @@ class ChevalAttribut extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'resistance',
+        'endurance',
+        'detente',
+        'vitesse',
+        'sociabilite',
+        'intelligence',
+        'temperament'
+    ];
 }

@@ -24,4 +24,13 @@ class Magasin extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'ID_centre',
+        'ID_club',
+        'ID_infra',
+        'ID_items',
+        'nom'
+    ];
 }

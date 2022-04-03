@@ -1,38 +1,38 @@
-Club_hippiques( ID, #ID_infra, #ID_concours, capacite )
+Club_hippiques( ID, #ID_infra, #ID_concours, capacite, created_at, updated_at )
 
-Concours( ID, #ID_Item, #ID_infra , date_deb, date_fin )
+Concours( ID, #ID_Item, #ID_infra , date_deb, date_fin, created_at, updated_at )
 
-Centre_equestre ( ID, #ID_club, #ID_infra, #ID_taches, capacite )
+Centre_equestre ( ID, #ID_club, #ID_infra, #ID_taches, capacite, created_at, updated_at )
 
-Infrastructure ( ID, #ID_accomodation_capacity, #ID_items, type, niveau, description, infrastructure_family, prix, ressource_consumption )
+Infrastructure ( ID, #ID_accomodation_capacity, #ID_items, type, niveau, description, infrastructure_family, prix, ressource_consumption, created_at, updated_at )
 
-Joueur_compte ( ID_joueur_compte, #ID_joueur, #ID_centre, #ID_chevaux, #ID_club, #ID_items, #ID_taches, username, mdp, date_Inscription, last_connexion )
+Joueur_compte ( ID_joueur_compte, #ID_joueur, #ID_centre, #ID_chevaux, #ID_club, #ID_items, #ID_taches, username, mdp, last_connexion, created_at, updated_at )
 
-Joueur ( ID_joueur, nom, prenom , email, sexe, birthDate, phone, address, IP_address, profile_picture, description, website )
+Joueur ( ID_joueur, nom, prenom , email, sexe, birthDate, phone, address, IP_address, profile_picture, description, website, created_at, updated_at )
 
-Cheval ( ID, #ID_attribut, #ID_etat, #ID_items, nom, race, description )
+Cheval ( ID, #ID_attribut, #ID_etat, #ID_items, nom, race, description, created_at, updated_at )
 
-Cheval_attribut ( ID, resistance, endurance, detente, vitesse, sociabilite, intelligence, temperament )
+Cheval_attribut ( ID, resistance, endurance, detente, vitesse, sociabilite, intelligence, temperament, created_at, updated_at )
 
-Etat ( ID, #ID_proprete, sante, moral, stress, fatigue, faim )
+Etat ( ID, #ID_proprete, sante, moral, stress, fatigue, faim, created_at, updated_at )
 
-Proprete ( ID, #ID_cheval, maladies, parasites, blessures )
+Proprete ( ID, #ID_cheval, maladies, parasites, blessures, created_at, updated_at )
 
-Banque_compte( ID, #ID_joueur, montant_compte )
+Banque_compte( ID, #ID_joueur, montant_compte, created_at, updated_at )
 
-HistoriqueBanquaire( ID, #ID_banque_compte, #ID_joueur, operation_effetuee, montant, last_connexion )
+HistoriqueBanquaire( ID, #ID_banque_compte, #ID_joueur, operation_effetuee, montant, last_connexion, created_at, updated_at )
 
-Tache_auto( ID, action, frequence )
+Tache_auto( ID, action, frequence, created_at, updated_at )
 
-Journal( ID, #ID_joueur, #ID_article, date, agenda, top_events )
+Journal( ID, #ID_joueur, #ID_article, date, agenda, top_events, created_at, updated_at )
 
-Article( ID, title, text, image, category )
+Article( ID, title, text, image, category, created_at, updated_at )
 
-Item( ID, #ID_niveau, #ID_famille, type, description, prix )
+Item( ID, #ID_niveau, #ID_famille, type, description, prix, created_at, updated_at )
 
-Famille_Item( ID, nom )
+Famille_Item( ID, nom, created_at, updated_at )
 
-Niveau( ID, rarete )
+Niveau( ID, rarete, created_at, updated_at )
 
-Magasin( ID, #ID_centre, #ID_club, #ID_infra, #ID_items, nom )
+Magasin( ID, #ID_centre, #ID_club, #ID_infra, #ID_items, nom, created_at, updated_at )
 

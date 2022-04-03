@@ -24,4 +24,9 @@ class FamilleItem extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'nom'
+    ];
 }

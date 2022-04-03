@@ -24,4 +24,14 @@ class Etat extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'ID_proprete',
+        'sante',
+        'moral',
+        'stress',
+        'fatigue',
+        'faim'
+    ];
 }

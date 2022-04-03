@@ -19,4 +19,3 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('magasin') }}'><i class='nav-icon la la-question'></i> Magasins</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('niveau') }}'><i class='nav-icon la la-question'></i> Niveaux</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('tache-auto') }}'><i class='nav-icon la la-question'></i> Tache autos</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('test') }}'><i class='nav-icon la la-question'></i> Tests</a></li>

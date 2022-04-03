@@ -24,4 +24,19 @@ class Joueur extends Model
     protected $primaryKey = 'ID_joueur';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID_joueur',
+        'nom',
+        'prenom',
+        'email',
+        'sexe',
+        'birthDate',
+        'phone',
+        'address',
+        'IP_address',
+        'profile_picture',
+        'description',
+        'website'
+    ];
 }

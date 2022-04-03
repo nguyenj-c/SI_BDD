@@ -25,4 +25,11 @@ class ClubHippique extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'ID_infra',
+        'ID_concours',
+        'capacite'
+    ];
 }

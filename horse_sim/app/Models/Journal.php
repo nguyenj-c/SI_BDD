@@ -24,4 +24,13 @@ class Journal extends Model
     protected $primaryKey = 'ID';
 
     protected $connection = 'mysql';
+
+    protected $fillable = [
+        'ID',
+        'ID_joueur',
+        'ID_article',
+        'date',
+        'agenda',
+        'top_events'
+    ];
 }
