@@ -30,6 +30,7 @@ class Article extends Model
         'ID',
         'title',
         'text',
-        'actions',
+        'image',
+        'category'
     ];
 }
