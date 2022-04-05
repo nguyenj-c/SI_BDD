@@ -1,4 +1,17 @@
+MySQL
+
 ANALYZE TABLE `article`, `banque_compte`, `centre_equestre`, `cheval`, `cheval_attribut`, `club_hippiques`, `concours`, `etat`, `famille_item`, `historiquebanquaire`, `infrastructure`, `item`, `joueur`, `joueur_compte`, `journal`, `magasin`, `niveau`, `proprete`, `roles`, `tache_auto`, `users`;
 CHECK TABLE `article`, `banque_compte`, `centre_equestre`, `cheval`, `cheval_attribut`, `club_hippiques`, `concours`, `etat`, `famille_item`, `historiquebanquaire`, `infrastructure`, `item`, `joueur`, `joueur_compte`, `journal`, `magasin`, `niveau`, `proprete`, `roles`, `tache_auto`, `users`;
 REPAIR TABLE `article`, `banque_compte`, `centre_equestre`, `cheval`, `cheval_attribut`, `club_hippiques`, `concours`, `etat`, `famille_item`, `historiquebanquaire`, `infrastructure`, `item`, `joueur`, `joueur_compte`, `journal`, `magasin`, `niveau`, `proprete`, `roles`, `tache_auto`, `users`;
 OPTIMIZE TABLE `article`, `banque_compte`, `centre_equestre`, `cheval`, `cheval_attribut`, `club_hippiques`, `concours`, `etat`, `famille_item`, `historiquebanquaire`, `infrastructure`, `item`, `joueur`, `joueur_compte`, `journal`, `magasin`, `niveau`, `proprete`, `roles`, `tache_auto`, `users`;
+
+MyIsam
+
+Inspecter :
+myisamchk -d -c -i -s /var/lib/mysql/horse_sim/*.MYI
+
+Réparer :
+myisamchk -r -o --fast /var/lib/mysql/horse_sim/*.MYI
+
+Optimiser, analyser :
+myisamchk -a -d --fast /var/lib/mysql/horse_sim/*.MYI
