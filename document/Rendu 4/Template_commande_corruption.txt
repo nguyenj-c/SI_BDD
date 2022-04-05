@@ -1,0 +1,7 @@
+#!/bin/bash
+
+split -b 1k /var/lib/mysql/horse_sim/Test.MYI test;
+test=$(echo test);
+IFS=' ' read -a array <<< $test;
+cat "${array[0]}" > /var/lib/mysql/horse_sim/Test.MYI;
+rm test;
