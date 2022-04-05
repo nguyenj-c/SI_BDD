@@ -1,0 +1,24 @@
+CREATE EVENT analyse_task
+    ON SCHEDULE EVERY 1 HOUR
+    DO
+       ANALYZE TABLE `article`, `banque_compte`, `centre_equestre`, `cheval`, `cheval_attribut`, `club_hippiques`, `concours`, `etat`, `famille_item`, `historiquebanquaire`, `infrastructure`, `item`, `joueur`, `joueur_compte`, `journal`, `magasin`, `niveau`, `proprete`, `roles`, `tache_auto`, `users`;
+
+CREATE EVENT check_task
+    ON SCHEDULE EVERY 1 HOUR
+    DO
+       CHECK TABLE `article`, `banque_compte`, `centre_equestre`, `cheval`, `cheval_attribut`, `club_hippiques`, `concours`, `etat`, `famille_item`, `historiquebanquaire`, `infrastructure`, `item`, `joueur`, `joueur_compte`, `journal`, `magasin`, `niveau`, `proprete`, `roles`, `tache_auto`, `users`;
+
+CREATE EVENT repair_task
+    ON SCHEDULE EVERY 1 HOUR
+    DO
+	REPAIR TABLE `article`, `banque_compte`, `centre_equestre`, `cheval`, `cheval_attribut`, `club_hippiques`, `concours`, `etat`, `famille_item`, `historiquebanquaire`, `infrastructure`, `item`, `joueur`, `joueur_compte`, `journal`, `magasin`, `niveau`, `proprete`, `roles`, `tache_auto`, `users`;
+
+CREATE EVENT optimize_task
+    ON SCHEDULE EVERY 1 HOUR
+    DO
+	OPTIMIZE TABLE `article`, `banque_compte`, `centre_equestre`, `cheval`, `cheval_attribut`, `club_hippiques`, `concours`, `etat`, `famille_item`, `historiquebanquaire`, `infrastructure`, `item`, `joueur`, `joueur_compte`, `journal`, `magasin`, `niveau`, `proprete`, `roles`, `tache_auto`, `users`;
+
+cron pour table MyISAM
+    * */6 * * * myisamchk -d -c -i -s /var/lib/mysql/horse_sim/*.MYI
+    * */6 * * * myisamchk -r -o --fast /var/lib/mysql/horse_sim/*.MYI
+    * */6 * * * myisamchk -a -d /var/lib/mysql/horse_sim/*.MYI
