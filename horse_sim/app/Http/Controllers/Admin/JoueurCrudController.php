@@ -70,7 +70,6 @@ class JoueurCrudController extends CrudController
     {
         CRUD::setValidation(JoueurRequest::class);
 
-        CRUD::field('ID_joueur');
         CRUD::field('nom');
         CRUD::field('prenom');
         CRUD::field('email');

@@ -44,6 +44,7 @@
                         </g>
                     </svg>
                 </div>
+                <div class="ml-4 text-lg leading-7 font-semibold"><a href="http://localhost/admin/dashboard" class="underline text-gray-900 dark:text-white">Admin Interface</a></div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
