@@ -1,0 +1,23 @@
+script pour lancer la sauvegarde avec mysqldump et mysqlhotcopy
+et archivage des fichier en .tgz
+
+#!/bin/sh
+mydate=$(date +"%Y%m%d%H%M")
+mysqldump -uadminer -pAdmin1234. --databases horse_sim > /root/SI_BDD/document/'Rendu 5'/horse_sim_backup/$mydate.sql
+mysqlhotcopy horse_sim /root/SI_BDD/document/'Rendu 5'/horse_sim_backup/
+cd /root/SI_BDD/document/'Rendu 5'/horse_sim_backup
+tar -zcvf horse_sim_backup_$mydate.tgz /root/SI_BDD/document/'Rendu 5'/horse_sim_backup/$mydate.sql /root/SI_BDD/document/'Rendu 5'/horse_sim_backup/horse_sim
+
+execution du script par cron
+
+0 5 * * 0 /root/SI_BDD/document/'Rendu 5'/horse_sim_backup/script_backup_horse_sim.sh
+
+sauvegarde par SELECT OUTFILE
+
+creation event (tache auto)
+
+CREATE EVENT Backup_task
+    ON SCHEDULE EVERY 1 WEEK
+    DO
+	SELECT * FROM `article`, `banque_compte`, `centre_equestre`, `cheval`, `cheval_attribut`, `club_hippiques`, `concours`, `etat`, `famille_item`, `historiquebanquaire`, `infrastructure`, `item`, `joueur`, `joueur_compte`, `journal`, `magasin`, `niveau`, `proprete`, `roles`, `tache_auto`, `users`
+        INTO OUTFILE 'backup_outfile.txt';
