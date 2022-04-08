@@ -25,7 +25,7 @@ class NiveauRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'rarete' => 'required|min:5|max:10'
         ];
     }
 
@@ -37,7 +37,7 @@ class NiveauRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
+            'rarete.required' => 'Rarete non valide'
         ];
     }
 

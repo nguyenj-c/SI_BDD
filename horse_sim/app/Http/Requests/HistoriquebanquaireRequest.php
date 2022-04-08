@@ -25,7 +25,10 @@ class HistoriquebanquaireRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'ID_banque_compte' => 'required|min:0|max:2',
+            'operation_effetuee' => 'required|min:0|max:10',
+            'montant' => 'required|min:0|max:5',
+            'last_connexion' => 'required'
         ];
     }
 
@@ -49,7 +52,10 @@ class HistoriquebanquaireRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'ID_banque_compte.required' => 'Non valide',
+            'operation_effetuee.required' => 'Non valide',
+            'montant.required' => 'Non valide',
+            'last_connexion.required' => 'Non valide'
         ];
     }
 }

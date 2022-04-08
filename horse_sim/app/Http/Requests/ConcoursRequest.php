@@ -25,7 +25,10 @@ class ConcoursRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'ID_Item' => 'required|min:0|max:2',
+            'ID_infra' => 'required|min:0|max:2',
+            'date_deb' => '',
+            'date_fin' => 'required'
         ];
     }
 
@@ -37,7 +40,9 @@ class ConcoursRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
+            'ID_Item.required' => 'Non valide',
+            'ID_infra.required' => 'Non valide',
+            'date_fin.required' => 'Non valide'
         ];
     }
 

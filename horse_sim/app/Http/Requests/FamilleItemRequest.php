@@ -25,7 +25,7 @@ class FamilleItemRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'nom' => 'required|min:5|max:30'
         ];
     }
 
@@ -37,7 +37,7 @@ class FamilleItemRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
+            'nom.required' => 'Non valide'
         ];
     }
 

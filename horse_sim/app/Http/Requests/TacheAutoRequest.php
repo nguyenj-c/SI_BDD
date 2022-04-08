@@ -25,7 +25,8 @@ class TacheAutoRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'action' => 'required|min:5|max:30',
+            'frequence' => 'required|min:5|max:10'
         ];
     }
 
@@ -49,7 +50,8 @@ class TacheAutoRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'action.required' => 'Action non valide',
+            'frequence.required' => 'Frequence non valide'
         ];
     }
 }

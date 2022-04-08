@@ -25,7 +25,10 @@ class CentreEquestreRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'ID_club' => 'required|min:0|max:2',
+            'ID_infra' => 'required|min:0|max:2',
+            'ID_taches' => 'required|min:0|max:2',
+            'capacite' => 'required|min:0|max:3'
         ];
     }
 
@@ -49,7 +52,10 @@ class CentreEquestreRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'ID_club.required' => 'Non valide',
+            'ID_infra.required' => 'Non valide',
+            'ID_taches.required' => 'Non valide',
+            'capacite.required' => 'Non valide'
         ];
     }
 }

@@ -25,7 +25,11 @@ class ItemRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'ID_niveau' => 'required|min:0|max:2',
+            'ID_famille' => 'required|min:0|max:2',
+            'type' => 'required|min:5|max:20',
+            'description' => 'required|min:0|max:50',
+            'prix' => 'required|min:0|max:3'
         ];
     }
 
@@ -49,7 +53,11 @@ class ItemRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'ID_niveau.required' => 'Non valide',
+            'ID_famille.required' => 'Non valide',
+            'type.required' => 'Non valide',
+            'description.required' => 'Non valide',
+            'prix.required' => 'Non valide'
         ];
     }
 }

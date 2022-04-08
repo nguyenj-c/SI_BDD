@@ -25,7 +25,10 @@ class JournalRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'ID_joueur' => 'required|min:0|max:2',
+            'ID_article' => 'required|min:0|max:2',
+            'agenda' => 'required|min:0|max:45',
+            'top_events' => 'required|min:0|max:45'
         ];
     }
 
@@ -37,7 +40,10 @@ class JournalRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
+            'ID_joueur.required' => 'Non valide',
+            'ID_article.required' => 'Non valide',
+            'agenda.required' => 'Non valide',
+            'top_events.required' => 'Non valide'
         ];
     }
 

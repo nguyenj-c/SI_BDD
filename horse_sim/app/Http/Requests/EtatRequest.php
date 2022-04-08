@@ -25,7 +25,12 @@ class EtatRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'ID_proprete' => 'required|min:0|max:2',
+            'sante' => 'required|min:0|max:2',
+            'moral' => 'required|min:0|max:2',
+            'stress' => 'required|min:0|max:2',
+            'fatigue' => 'required|min:0|max:2',
+            'faim' => 'required|min:0|max:2'
         ];
     }
 
@@ -49,7 +54,12 @@ class EtatRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'ID_proprete.required' => 'Non valide',
+            'sante.required' => 'Non valide',
+            'moral.required' => 'Non valide',
+            'stress.required' => 'Non valide',
+            'fatigue.required' => 'Non valide',
+            'faim.required' => 'Non valide'
         ];
     }
 }

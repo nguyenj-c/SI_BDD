@@ -28,7 +28,7 @@ class ArticleRequest extends FormRequest
             'title' => 'required|min:5|max:20',
             'text' => 'required|min:5|max:50',
             'image' => 'required|min:5|max:100',
-            'category' => 'required|min:5|max:10',
+            'category' => 'required|min:5|max:10'
         ];
     }
 
@@ -52,7 +52,10 @@ class ArticleRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'title.required' => 'Non valide',
+            'text.required' => 'Non valide',
+            'image.required' => 'Non valide',
+            'category.required' => 'Non valide'
         ];
     }
 }

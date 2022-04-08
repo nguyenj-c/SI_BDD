@@ -25,7 +25,15 @@ class JoueurRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'nom' => 'required|min:5|max:30',
+            'prenom' => 'required|min:5|max:30',
+            'email' => 'required|min:5|max:30',
+            'sexe' => 'required',
+            'birthDate' => 'required',
+            'phone' => 'required|min:5|max:30',
+            'address' => 'required|min:5|max:255',
+            'IP_address' => 'required|min:15|max:15',
+            'profile_picture' => 'required|min:15|max:100'
         ];
     }
 
@@ -49,7 +57,15 @@ class JoueurRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'nom.required' => 'Non valide',
+            'prenom.required' => 'Non valide',
+            'email.required' => 'Non valide',
+            'sexe.required' => 'Non valide',
+            'birthDate.required' => 'Non valide',
+            'phone.required' => 'Non valide',
+            'address.required' => 'Non valide',
+            'IP_address.required' => 'Non valide',
+            'profile_picture.required' => 'Non valide'
         ];
     }
 }

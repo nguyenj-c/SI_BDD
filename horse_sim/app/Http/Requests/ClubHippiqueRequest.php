@@ -25,7 +25,9 @@ class ClubHippiqueRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'ID_infra' => 'required|min:0|max:2',
+            'ID_concours' => 'required|min:0|max:2',
+            'capacite' => 'required|min:0|max:2'
         ];
     }
 
@@ -49,7 +51,9 @@ class ClubHippiqueRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'ID_infra.required' => 'Non valide',
+            'ID_concours.required' => 'Non valide',
+            'capacite.required' => 'Non valide'
         ];
     }
 }

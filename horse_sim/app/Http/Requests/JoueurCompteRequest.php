@@ -25,7 +25,14 @@ class JoueurCompteRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'ID_joueur' => 'required|min:0|max:2',
+            'ID_centre' => 'required|min:0|max:2',
+            'ID_chevaux' => 'required|min:0|max:2',
+            'ID_club' => 'required|min:0|max:2',
+            'ID_items' => 'required|min:0|max:2',
+            'ID_taches' => 'required|min:0|max:2',
+            'username' => 'required|min:5|max:30',
+            'mdp' => 'required|min:5|max:50'
         ];
     }
 
@@ -49,7 +56,14 @@ class JoueurCompteRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'ID_joueur.required' => 'Non valide',
+            'ID_centre.required' => 'Non valide',
+            'ID_chevaux.required' => 'Non valide',
+            'ID_club.required' => 'Non valide',
+            'ID_items.required' => 'Non valide',
+            'ID_taches.required' => 'Non valide',
+            'username.required' => 'Non valide',
+            'mdp.required' => 'Non valide'
         ];
     }
 }

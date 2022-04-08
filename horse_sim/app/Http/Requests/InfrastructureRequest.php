@@ -25,7 +25,14 @@ class InfrastructureRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'ID_accomodation_capacity' => 'required|min:0|max:2',
+            'ID_items' => 'required|min:0|max:2',
+            'type' => 'required|min:0|max:10',
+            'niveau' => 'required|min:0|max:1',
+            'description' => 'required|min:0|max:50',
+            'infrastructure_family' => 'required|min:0|max:10',
+            'prix' => 'required|min:0|max:3',
+            'ressource_consumption' => 'required|min:0|max:3'
         ];
     }
 
@@ -49,7 +56,14 @@ class InfrastructureRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'ID_accomodation_capacity.required' => 'Non valide',
+            'ID_items.required' => 'Non valide',
+            'type.required' => 'Non valide',
+            'niveau.required' => 'Non valide',
+            'description.required' => 'Non valide',
+            'infrastructure_family.required' => 'Non valide',
+            'prix.required' => 'Non valide',
+            'ressource_consumption.required' => 'Non valide'
         ];
     }
 }

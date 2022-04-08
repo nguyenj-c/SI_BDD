@@ -25,7 +25,11 @@ class MagasinRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'ID_centre' => 'required|min:0|max:2',
+            'ID_club' => 'required|min:0|max:2',
+            'ID_infra' => 'required|min:0|max:2',
+            'ID_items' => 'required|min:5|max:30',
+            'nom' => 'required|min:5|max:30'
         ];
     }
 
@@ -49,7 +53,11 @@ class MagasinRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'ID_centre.required' => 'ID non recevable',
+            'ID_club.required' => 'ID non recevable',
+            'ID_infra.required' => 'ID non recevable',
+            'ID_items.required' => 'ID non recevable',
+            'nom.required' => 'Nom non valide'
         ];
     }
 }

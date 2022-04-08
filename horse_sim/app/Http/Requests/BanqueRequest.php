@@ -25,7 +25,8 @@ class BanqueRequest extends FormRequest
     public function rules()
     {
         return [
-            'ID_joueur' => 'required|min:2'
+            'ID_joueur' => 'required|min:0|max:2',
+            'montant_compte' => 'required|min:0|max:5'
         ];
     }
 
@@ -37,7 +38,8 @@ class BanqueRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
+            'ID_joueur.required' => 'Non valide',
+            'montant_compte.required' => 'Non valide'
         ];
     }
 

@@ -25,7 +25,13 @@ class ChevalAttributRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'resistance' => 'required|min:0|max:1',
+            'endurance' => 'required|min:0|max:1',
+            'detente' => 'required|min:0|max:1',
+            'vitesse' => 'required|min:0|max:1',
+            'sociabilite' => 'required|min:0|max:1',
+            'intelligence' => 'required|min:0|max:1',
+            'temperament' => 'required|min:0|max:1'
         ];
     }
 
@@ -49,7 +55,13 @@ class ChevalAttributRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'resistance.required' => 'Non valide',
+            'endurance.required' => 'Non valide',
+            'detente.required' => 'Non valide',
+            'vitesse.required' => 'Non valide',
+            'sociabilite.required' => 'Non valide',
+            'intelligence.required' => 'Non valide',
+            'temperament.required' => 'Non valide'
         ];
     }
 }

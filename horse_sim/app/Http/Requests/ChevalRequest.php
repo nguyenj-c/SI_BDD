@@ -25,7 +25,12 @@ class ChevalRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'ID_attribut' => 'required|min:0|max:2',
+            'ID_etat' => 'required|min:0|max:2',
+            'ID_items' => 'required|min:0|max:2',
+            'nom' => 'required|min:5|max:30',
+            'race' => 'required|min:5|max:20',
+            'description' => 'required|min:10|max:50'
         ];
     }
 
@@ -49,7 +54,12 @@ class ChevalRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'ID_attribut.required' => 'Non valide',
+            'ID_etat.required' => 'Non valide',
+            'ID_items.required' => 'Non valide',
+            'nom.required' => 'Non valide',
+            'race.required' => 'Non valide',
+            'description.required' => 'Non valide'
         ];
     }
 }
