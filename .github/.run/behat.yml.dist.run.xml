@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="true" type="PhpBehatConfigurationType" singleton="false">
+        <BehatRunner scenario="" scope="Yml" />
+        <CommandLine workingDirectory="$PROJECT_DIR$/horse_sim" />
+        <method v="2" />
+    </configuration>
+</component>
